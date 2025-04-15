@@ -15,7 +15,7 @@ class User extends Authenticatable
 
     protected $connection = 'mongodb';
 
-    protected $table = 'users';
+    protected $collection = 'users';
 
     /**
      * The attributes that are mass assignable.

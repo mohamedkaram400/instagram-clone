@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use MongoDB\Laravel\Eloquent\Model;
+use MongoDB\Laravel\Relations\BelongsTo;
 
 class Post extends Model
 {
     protected $connection = 'mongodb';
-    protected $table = 'posts';
+    protected $collection = 'posts';
 
     protected $fillable = [
         'caption',
@@ -16,7 +17,7 @@ class Post extends Model
         'user_id',
     ];
 
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }

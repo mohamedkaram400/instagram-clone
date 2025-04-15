@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use MongoDB\Laravel\Eloquent\Model;
 
 class Comment extends Model
 {
     protected $connection = 'mongodb';
-    protected $table = 'comments';
+    protected $collection = 'comments';
 
     protected $fillable = [
         'comment',
